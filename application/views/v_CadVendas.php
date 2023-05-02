@@ -53,27 +53,19 @@
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <div class="input-group col-3 col-sm-12 ">
+                    <div class="input-group col">
                         <span class="input-group-text bg-dark text-white" id="spanQtde">QTDE:</span>
                         <input type="text" name="txtQtde" id="txtQtde" class="form-control" aria-describedby="spanQtde">
                     </div>
-                    <div class="input-group col-3 col-sm-6">
+                    <div class="input-group col">
                         <span class="input-group-text bg-dark text-white" id="spanMaterial">MATERIAL:</span>
                         <input type="number" name="txtMaterial" id="txtMaterials" class="form-control" aria-describedby="spanMaterial">
                     </div>
-                    <div class="input-group col-3 col-sm-6">
+                    <div class="input-group col">
                         <input type="text" class="form-control text-uppercase " id="inpDescMaterial" name="inpDescMaterial" placeholder="DESCRIÇÃO MATERIAL" aria-label="DESCRIÇÃO MATERIAL" readonly>
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <div class="form-group col-md-4 col-sm-6 col-xs-6">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-dark text-uppercase  text-light" id="basic-addon1">DATA :</span>
-                            </div>
-                            <input type="text" class="form-control text-center" id="inpdata" name="inpdata" placeholder="<?= date('d/m/Y') ?>" readonly>
-                        </div>
-                    </div>
                     <div class="form-group col-12">
                         <button type="button" class="col-12 btn btn-lg btn-dark" id="btnSolicManut" onclick="cadasVendas()"><i class="fas fa-toolbox"></i> CADASTRAR VENDAS</button>
                     </div>

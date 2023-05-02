@@ -2,7 +2,7 @@
 > Status do projeto: Em desenvolvimento.
 Sistema criado para realizar cadastro, relatorios e consultas de uma loja de roupas.
 
-**#####Projeto#####**
+**Projeto**
 Para executar o projeto é necessário o download do sistema Xampp.
 
 Insira o projeto na pasta C:\\xampp\\htdocs.
@@ -16,7 +16,7 @@ Senha: admin
 Para realizar que o sistema flua de forma correta, crie o banco de dados.
 `create database 'dbadm';`
 
-**#####O que é CodeIgniter#####**
+**O que é CodeIgniter**
 
 CodeIgniter é um Application Development Framework - um kit de ferramentas - para pessoas
 que constroem sites usando PHP. Seu objetivo é permitir que você desenvolva projetos
