@@ -24,3 +24,11 @@ SET time_zone = "+00:00";
 
 create database `dbadm`;
 
+CREATE TABLE `vendedores` (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `dtcria` date NOT NULL,
+  `status` varchar(2) NOT NULL,
+   PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

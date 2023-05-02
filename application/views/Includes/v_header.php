@@ -16,3 +16,5 @@
     <!-- this should go after your </body> -->
     <script src="/jquery.js"></script>
     <script src="/build/jquery.datetimepicker.full.min.js"></script>
+</head>
+<body>
