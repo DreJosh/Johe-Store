@@ -1,3 +1,7 @@
+# JoheStore
+> Status do projeto: Em desenvolvimento.
+Sistema criado para realizar cadastro, relatorios e consultas de uma loja de roupas.
+
 ##################
 Projeto
 ##################
@@ -11,74 +15,79 @@ Login: admin
 
 Senha: admin
 
+Para realizar que o sistema flua de forma correta, crie o banco de dados.
+````
+create database 'dbadm';
+````
+
 ###################
-What is CodeIgniter
+O que é CodeIgniter
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
-
-*******************
-Release Information
-*******************
-
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
-
-**************************
-Changelog and New Features
-**************************
-
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
-
-*******************
-Server Requirements
-*******************
-
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
+CodeIgniter é um Application Development Framework - um kit de ferramentas - para pessoas
+que constroem sites usando PHP. Seu objetivo é permitir que você desenvolva projetos
+muito mais rápido do que você poderia se estivesse escrevendo código do zero, fornecendo
+um rico conjunto de bibliotecas para tarefas comumente necessárias, bem como um simples
+interface e estrutura lógica para acessar essas bibliotecas. O CodeIgniter permite
+você se concentra criativamente em seu projeto, minimizando a quantidade de código necessária
+para uma determinada tarefa.
 
 *******
-License
+Informações de liberação
 *******
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+Este repositório contém código em desenvolvimento para versões futuras. Para baixar o
+versão estável mais recente, visite `CodeIgniter Downloads
+<https://codeigniter.com/download>`_ página.
+
+**************
+Registro de alterações e novos recursos
+**************
+
+Você pode encontrar uma lista de todas as mudanças para cada lançamento no `user
+log de alteração do guia <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+
+*******
+Requisitos do servidor
+*******
+
+PHP versão 5.6 ou mais recente é recomendado.
+
+Também deve funcionar no 5.3.7, mas recomendamos fortemente que você NÃO execute
+tais versões antigas do PHP, devido ao potencial de segurança e desempenho
+problemas, bem como recursos ausentes.
+
+************
+Instalação
+************
+
+Consulte a `seção de instalação <https://codeigniter.com/userguide3/installation/index.html>`_
+do Guia do Usuário do CodeIgniter.
+
+*******
+Licença
+*******
+
+Consulte a `licença
+contrato <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
 
 *********
-Resources
+Recursos
 *********
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+- `Guia do Usuário <https://codeigniter.com/docs>`_
+- `Guia de contribuição <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
+- `Traduções de arquivos de linguagem <https://github.com/bcit-ci/codeigniter3-translations>`_
+- `Fóruns da comunidade <http://forum.codeigniter.com/>`_
+- `Wiki da comunidade <https://github.com/bcit-ci/CodeIgniter/wiki>`_
+- `Canal Slack da Comunidade <https://codeigniterchat.slack.com>`_
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+Relate problemas de segurança em nosso `Painel de segurança <mailto:security@codeigniter.com>`_
+ou através da nossa `página no HackerOne <https://hackerone.com/codeigniter>`_, obrigado.
 
 ***************
-Acknowledgement
+Reconhecimento
 ***************
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+A equipe do CodeIgniter gostaria de agradecer ao EllisLab, a todos os
+contribuidores do projeto CodeIgniter e você, o usuário do CodeIgniter.
