@@ -15,4 +15,12 @@ class Vendas extends CI_Controller
         $this->load->view('v_CadVendas', $retorno);
         $this->load->view('Includes/v_footer');
     }
+
+    public function material()
+    {
+        $material = $this->input->post('material');
+        $this->load->model('M_retorno');
+        $retorno = $this->M_retorno->material($material);
+        echo json_encode($retorno);
+    }
 }

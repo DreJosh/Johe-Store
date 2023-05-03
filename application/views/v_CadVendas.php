@@ -45,7 +45,7 @@
                             <?php
                             foreach ($vendedor as $value) {
                             ?>
-                                <option value="<?= $value->codigo ?>"><?= $value->codigo ?> - <?= $value->nome ?></option>
+                                <option value="<?= $value->codigo ?>"><?= $value->nome ?></option>
                             <?php
                             }
                             ?>
@@ -55,11 +55,11 @@
                 <div class="row mt-2">
                     <div class="input-group col">
                         <span class="input-group-text bg-dark text-white" id="spanQtde">QTDE:</span>
-                        <input type="text" name="txtQtde" id="txtQtde" class="form-control" aria-describedby="spanQtde">
+                        <input type="number" name="txtQtde" id="txtQtde" class="form-control" aria-describedby="spanQtde">
                     </div>
                     <div class="input-group col">
                         <span class="input-group-text bg-dark text-white" id="spanMaterial">MATERIAL:</span>
-                        <input type="number" name="txtMaterial" id="txtMaterials" class="form-control" aria-describedby="spanMaterial">
+                        <input type="number" name="txtMaterial" id="txtMaterials" class="form-control" aria-describedby="spanMaterial" onblur="material()">
                     </div>
                     <div class="input-group col">
                         <input type="text" class="form-control text-uppercase " id="inpDescMaterial" name="inpDescMaterial" placeholder="DESCRIÇÃO MATERIAL" aria-label="DESCRIÇÃO MATERIAL" readonly>
@@ -81,88 +81,62 @@
             <div class="card-body">
                 <div id="infLocal" class=" col-12 px-0"></div>
                 <!-- PAINEL DE PESQUISA -->
-                <div class="d-none" id="painel">
-                    <div class="card border border-dark rounded-bottom">
-                        <div class="card-body">
-                            <div class="row">
-                                <input type="text" class="d-none" id="inpVerifica">
-                                <div class="form-group col-lg-4 col-sm-6 col-md-12" id='nrOM'>
-                                    <div class="input-group ">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text bg-dark text-light" id="spanNroOM">NRO. OM:</span>
-                                        </div>
-                                        <input type="number" class="form-control" id="inpNroOM" name="inpNroOM" aria-describedby="spanNroOM">
-                                    </div>
-                                </div>
-                                <div class="form-group col-lg-4 col-sm-6 col-md-12" id="maquina">
-                                    <div class="input-group ">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text bg-dark text-light" id="spanNroMaquina">NRO. MÁQUINA :</span>
-                                        </div>
-                                        <input type="number" class="form-control" id="inpNroMaqui" name="inpNroMaqui" aria-describedby="spanNroMaquina">
-                                    </div>
-                                </div>
-                                <div class="form-group col-lg-4 col-sm-6 col-md-12" id="solicitante">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text bg-dark text-light" id="spanSolicitante">SOLICITANTE :</span>
-                                        </div>
-                                        <input type="number" class="form-control" id="inpBusSolicitante" name="inpBusSolicitante" aria-describedby="spanSolicitante">
-                                    </div>
-                                </div>
-                                <div class="form-group col-lg-6 col-md-12" id="solicitante">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text text-uppercase bg-dark text-light" id="spanDtIni">DATA INICIO</span>
-                                        </div>
-                                        <input type="date" class="form-control" name="dataIni" id="dataIni">
-                                    </div>
-                                </div>
 
-                                <div class="form-group col-lg-6 col-md-12" id="solicitante">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text text-uppercase bg-dark text-light" id="spanDtFinal">DATA FINAL</span>
-                                        </div>
-                                        <input type="date" class="form-control" name="dataFim" id="dataFim">
-                                    </div>
+                <div class="card border border-dark rounded-bottom">
+                    <div class="card-body">
+                        <div class="row mt-2">
+                            <div class="form-group col" id='nrOM'>
+                                <div class="input-group ">
+                                    <span class="input-group-text bg-dark text-light" id="spanNroOM">MATERIAL:</span>
+                                    <input type="number" class="form-control" id="inpNroOM" name="inpNroOM" aria-describedby="spanNroOM">
                                 </div>
-
-                                <div class="form-group col-lg-12 col-sm-6 col-md-12 text-right" id="botao">
-                                    <div class="row">
-                                        <div class="form-group col-6">
-                                            <button class="btn btn-primary col-12" id="btnBuscaOcorremcia" onclick="busca();">BUSCAR <i class="fas fa-search"></i></button>
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <button class="btn btn-brown col-12" id="btnLimparOcorrencia" onclick="limpar()">LIMPAR <i class="far fa-trash-alt"></i></button>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="form-group col" id="maquina">
+                                <div class="input-group ">
+                                    <span class="input-group-text bg-dark text-light" id="spanNroMaquina">VENDEDOR:</span>
+                                    <input type="number" class="form-control" id="inpNroMaqui" name="inpNroMaqui" aria-describedby="spanNroMaquina">
+                                </div>
+                            </div>
+                            <div class="form-group col" id="solicitante">
+                                <div class="input-group">
+                                    <span class="input-group-text bg-dark text-light" id="spanSolicitante">CÓD. VENDA</span>
+                                    <input type="number" class="form-control" id="inpBusSolicitante" name="inpBusSolicitante" aria-describedby="spanSolicitante">
                                 </div>
                             </div>
                         </div>
+                        <div class="row mt-2">
+                            <div class="form-group col" id="solicitante">
+                                <div class="input-group">
+                                    <span class="input-group-text text-uppercase bg-dark text-light" id="spanDtIni">DATA INICIO</span>
+                                    <input type="date" class="form-control" name="dataIni" id="dataIni">
+                                </div>
+                            </div>
+
+                            <div class="form-group col" id="solicitante">
+                                <div class="input-group">
+                                    <span class="input-group-text text-uppercase bg-dark text-light" id="spanDtFinal">DATA FINAL</span>
+                                    <input type="date" class="form-control" name="dataFim" id="dataFim">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="form-group col">
+                                <button class="btn btn-primary col-12" id="btnBuscaOcorremcia" onclick="busca();">BUSCAR <i class="fas fa-search"></i></button>
+                            </div>
+                            <div class="form-group col">
+                                <button class="btn btn-warning col-12" id="btnLimparOcorrencia" onclick="limpar()">LIMPAR <i class="far fa-trash-alt"></i></button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- ------------------ -->
-
-                <!-- TABELA ONDE EXIBI TODAS AS OCORRÊNCIAS ATIVAS  -->
-                <div id="divOcorrencia" class="d-none">
-
-                    <input type="text" id="local" class="d-none">
-                    <button class="btn btn-indigo toolbar mr-2" id="btnMinhaOcorrencia" onclick="">MINHAS OCORRÊNCIAS</button>
-                    <button class="btn btn-primary toolbar mr-2" id="btnBuscarOcorr" onclick="$('#painel,#btnFechBuscar').removeClass('d-none'); $('#btnBuscarOcorr').addClass('d-none');$('#botao').removeClass('col-lg-4');$('#botao').addClass('col-lg-12');">BUSCAR <i class="fas fa-search"></i></button>
-                    <button type="button" class="btn btn-amber mr-2 toolbar" id="btnVoltar">Voltar <i class="fas fa-undo"></i></button>
-                    <button class="btn btn-danger toolbar d-none " id="btnFechBuscar" onclick="$('#painel,#btnFechBuscar').addClass('d-none'); $('#btnBuscarOcorr').removeClass('d-none'); limpar()">FECHA BUSCAR <i class="fas fa-times"></i></button>
-
-                    <table class="table table-bordered table-round-corner table-hover text-center col-12" id="tableOcorrencia" data-toggle="table" data-pagination="true" data-mobile-responsive="true" data-page-list="[10, 25, 50, 100, all]" data-toolbar=".toolbar" data-min-width="1131" data-pagination="true" data-detail-view="true" data-page-size="8" data-buttons-class="btn-dark" data-detail-formatter="detailFormatter" data-url="">
+                    <table class="table table-bordered table-round-corner table-hover text-center" id="tableVendas" data-toggle="table" data-pagination="true" data-mobile-responsive="true" data-page-list="[10, 25, 50, 100, all]" data-pagination="true" data-detail-view="true" data-detail-formatter="detailFormatter" data-url="">
                         <thead class="bg-dark rounded text-uppercase text-white">
                             <tr>
-                                <th data-halign="center" data-align="center" data-field="NRO. OM" class="text-uppercase">NÚMERO OM</th>
-                                <th data-halign="center" data-align="center" data-field="SOLICITANTE" class="text-uppercase">SOLICITANTE</th>
-                                <th data-halign="center" data-align="center" data-field="SETOR" class="text-uppercase">SETOR</th>
-                                <th data-halign="center" data-align="center" data-field="MAQUINA" class="text-uppercase">MÁQUINA</th>
-                                <th data-halign="center" data-align="center" data-field="DATA-HORA" class="text-uppercase">DATA/HORA</th>
-                                <th data-halign="center" data-align="center" data-field="DESCRIÇÃO" class="text-uppercase">DESCRIÇÃO</th>
+                                <th data-halign="center" data-align="center" data-field="" class="text-uppercase">VENDA</th>
+                                <th data-halign="center" data-align="center" data-field="" class="text-uppercase">QTDE.</th>
+                                <th data-halign="center" data-align="center" data-field="" class="text-uppercase">MATERIAL</th>
+                                <th data-halign="center" data-align="center" data-field="" class="text-uppercase">DESCRIÇÃO</th>
+                                <th data-halign="center" data-align="center" data-field="" class="text-uppercase">MÉTODO</th>
+                                <th data-halign="center" data-align="center" data-field="" class="text-uppercase">VENDEDOR</th>
 
                             </tr>
                         </thead>
@@ -179,25 +153,50 @@
     function btnCadasVendas() {
         $('#formOcorrencia').removeClass('d-none');
         $('#ocorrenciaTab').addClass("border border-dark");
+        $('#ocorrenciaTab').addClass("bg-dark text-white");
         $('#SoliTab').removeClass("border border-dark");
-        $('#Solici,#infLocal').addClass('d-none');
+        $('#SoliTab').removeClass("bg-dark text-white");
+        $('#vendas').addClass('d-none');
     }
     //////////////////////////////////////////////////
 
     ///////////////////////////////////////////////////////
     // EXIBI AS TABELAS COM TODAS AS OCORRÊNCIAS ATIVAS. //
     ///////////////////////////////////////////////////////
-    function vendas() {
-        $("#botao").removeClass('col-4');
-        $("#botao").addClass('col-12');
-        $('#solicitante,#divOcorrencia,#btnBuscarOcorr').removeClass('d-none');
-        $('#inpNroOM,#inpNroMaqui,#inpSolicitante').val('');
-        $('#divMiOcorrencia,#painel,#btnFechBuscar').addClass('d-none');
-        $("#inpVerifica").val('');
+    function Vendas() {
+        $('#vendas').removeClass('d-none');
+        $('#SoliTab').addClass("border border-dark bg-dark text-white");
+        $('#ocorrenciaTab').removeClass("border border-dark bg-dark text-white");
+        $('#formOcorrencia').addClass('d-none');
     }
     /////////////////////////////////////////////////////////
 
+    /////////////////////////////////////////////////////////
+    //// VERIFICA SE EXISTE O MATERIAL E RETORNA O MESMO ////
+    /////////////////////////////////////////////////////////
+    function material() {
+        var dadosajax = {
+            material: $('#txtMaterials').val()
+        };
+        $.ajax({
+            url: base_url + "/Vendas/material",
+            data: dadosajax,
+            type: 'POST',
+            dataType: "json",
+            cache: false,
+            success: function(result) {
+                console.log(result)
+                $('#inpDescMaterial').val(result[0].descricao)
+            }
+        });
+    }
+    /////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////
+    ////            CADASTRA A VENDA EXECUTADA           ////
+    /////////////////////////////////////////////////////////
     function cadasVendas() {
 
     }
+    /////////////////////////////////////////////////////////
 </script>

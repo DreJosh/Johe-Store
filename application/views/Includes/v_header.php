@@ -17,4 +17,10 @@
     <script src="/jquery.js"></script>
     <script src="/build/jquery.datetimepicker.full.min.js"></script>
 </head>
+
 <body>
+
+    <script>
+        //BASE URL
+        var base_url = '<?php echo base_url(); ?>';
+    </script>
