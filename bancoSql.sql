@@ -46,3 +46,6 @@ CREATE TABLE `dbadm`.`material` (`codMaterial` INT(15) NOT NULL AUTO_INCREMENT ,
 
 /*Criando dados de material*/
 INSERT INTO `material` (`codMaterial`, `descricao`, `codCliente`, `dataCria`, `MatMini`, `Matmax`, `status`, `usucria`) VALUES ('1', 'Camisa lisa tamanho G cinza', '789485712', '2023-05-03', '5', '9999', '', '1');
+
+/*Cadastrando venda*/
+INSERT INTO `movloja` (`Produto`, `dtmov`, `tpdov`, `func`, `cliente`, `dtcria`, `Saldo`, `qtdeMov`, `meioVenda`) VALUES ('1', '2023-03-01', '2', '1', 'Luzia Sandra Belmonte Ferreira', '2023-05-03 16:41:17.000000', '25', '1', 'P');

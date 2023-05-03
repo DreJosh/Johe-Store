@@ -10,6 +10,7 @@ class M_retorno extends CI_Model
         $this->db->select('codigo, nome');
         $this->db->where('status', ' ');
         $query = $this->db->get("vendedores");
+        
         return $query->result();
     }
 
@@ -18,6 +19,13 @@ class M_retorno extends CI_Model
         $this->db->select('descricao');
         $this->db->where('codMaterial', $material);
         $query = $this->db->get("material");
+        return $query->result();
+    }
+
+    public function movVendas()
+    {
+        $this->db->select('LIMIT 100 *');
+        $query = $this->db->get("movloja");
         return $query->result();
     }
 }

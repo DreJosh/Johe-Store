@@ -21,7 +21,7 @@
         </div>
     </nav>
     <!-- -------------------- -->
-    <!-- ABA PARA REALIZAR UMA SOLICITAÇÃO DE OCORRÊNCIA DE MANUTENÇÃO  -->
+    <!-- ABA PARA REALIZAR CADASTRO DE VENDAS  -->
     <div id="formOcorrencia" class="">
         <div class="card border border-dark rounded-bottom">
             <div class="card-body ">
@@ -58,11 +58,15 @@
                         <input type="number" name="txtQtde" id="txtQtde" class="form-control" aria-describedby="spanQtde">
                     </div>
                     <div class="input-group col">
-                        <span class="input-group-text bg-dark text-white" id="spanMaterial">MATERIAL:</span>
+                        <span class="input-group-text bg-dark text-white" id="spanMaterial">PRODUTO:</span>
                         <input type="number" name="txtMaterial" id="txtMaterials" class="form-control" aria-describedby="spanMaterial" onblur="material()">
                     </div>
                     <div class="input-group col">
                         <input type="text" class="form-control text-uppercase " id="inpDescMaterial" name="inpDescMaterial" placeholder="DESCRIÇÃO MATERIAL" aria-label="DESCRIÇÃO MATERIAL" readonly>
+                    </div>
+                    <div class="input-group col">
+                        <span class="input-group-text bg-dark text-white" id="spanDtVenda">DT. VENDA:</span>
+                        <input type="date" name="txtDtVenda" id="txtDtVenda" class="form-control" aria-describedby="spanDtVenda">
                     </div>
                 </div>
                 <div class="row mt-2">
@@ -75,7 +79,7 @@
     </div>
     <!-- -------------------------------------------------------------- -->
 
-    <!-- ABA ONDE MOSTRA AS SOLICITAÇÕES -->
+    <!-- ABA ONDE MOSTRA AS VENDAS -->
     <div id="vendas" class="d-none">
         <div class="card border border-dark rounded-bottom">
             <div class="card-body">
@@ -121,14 +125,14 @@
                         </div>
                         <div class="row mt-2">
                             <div class="form-group col">
-                                <button class="btn btn-primary col-12" id="btnBuscaOcorremcia" onclick="busca();">BUSCAR <i class="fas fa-search"></i></button>
+                                <button class="btn btn-primary col-12" id="btnBuscaOcorremcia">BUSCAR <i class="fas fa-search"></i></button>
                             </div>
                             <div class="form-group col">
-                                <button class="btn btn-warning col-12" id="btnLimparOcorrencia" onclick="limpar()">LIMPAR <i class="far fa-trash-alt"></i></button>
+                                <button class="btn btn-warning col-12" id="btnLimparOcorrencia">LIMPAR <i class="far fa-trash-alt"></i></button>
                             </div>
                         </div>
                     </div>
-                    <table class="table table-bordered table-round-corner table-hover text-center" id="tableVendas" data-toggle="table" data-pagination="true" data-mobile-responsive="true" data-page-list="[10, 25, 50, 100, all]" data-pagination="true" data-detail-view="true" data-detail-formatter="detailFormatter" data-url="">
+                    <table class="table table-bordered table-round-corner table-hover text-center" id="tableVendas" data-toggle="table" data-pagination="true" data-mobile-responsive="true" data-page-list="[10, 25, 50, 100, all]" data-pagination="true" data-detail-view="true" data-detail-formatter="detailFormatter" data-url="<?php echo base_url('/Vendas/movVendas'); ?>">
                         <thead class="bg-dark rounded text-uppercase text-white">
                             <tr>
                                 <th data-halign="center" data-align="center" data-field="" class="text-uppercase">VENDA</th>
@@ -196,7 +200,40 @@
     ////            CADASTRA A VENDA EXECUTADA           ////
     /////////////////////////////////////////////////////////
     function cadasVendas() {
-
+        var dadosajax = {
+            cliente: $('#txtCliente').val(),
+            meio: $('#slMeioVend').val(),
+            qtde: $('#txtQtde').val(),
+            produto: $('#txtMaterials').val(),
+            vendedor: $('#slVendedor').val(),
+            dtMov: $('#txtDtVenda').val()
+        };
+        $.ajax({
+            url: base_url + "/Vendas/cadasVendas",
+            data: dadosajax,
+            type: 'POST',
+            dataType: "json",
+            cache: false,
+            success: function(result) {
+                if (result == true) {
+                    swal({
+                        timer: 3000,
+                        title: "Sucesso!",
+                        text: "Venda Cadastrada.",
+                        imageUrl: base_url + "/img/check.gif",
+                        showConfirmButton: false
+                    });
+                } else {
+                    swal({
+                        timer: 3000,
+                        title: "Erro!",
+                        text: "Não foi possível realizar sua venda, verifique.",
+                        imageUrl: base_url + "/img/erro.gif",
+                        showConfirmButton: false
+                    });
+                }
+            }
+        });
     }
     /////////////////////////////////////////////////////////
 </script>

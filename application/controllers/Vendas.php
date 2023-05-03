@@ -23,4 +23,19 @@ class Vendas extends CI_Controller
         $retorno = $this->M_retorno->material($material);
         echo json_encode($retorno);
     }
+
+    public function movVendas()
+    {
+        $this->load->model('M_retorno');
+        $retorno = $this->M_retorno->movVendas();
+        echo json_encode($retorno);
+    }
+
+    public function cadasVendas()
+    {
+        $cadastro = $this->input->post();
+        $this->load->model('M_insert');
+        $retorno = $this->M_insert->cadasVendas($cadastro);
+        echo $retorno;
+    }
 }
