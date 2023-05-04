@@ -10,17 +10,18 @@ class M_insert extends CI_Model
         $saldo = 0;
         $this->db->select('tpdov, Saldo, qtdeMov');
         $this->db->where('Produto', $cadastro['produto']);
-        $query = $this->db->get("movloja");
-        var_dump($query);
-        exit();
-        $saldo = $query['Saldo'];
+        $query = $this->db->get("movloja")->result();
 
-        foreach ($query->result() as $linha) {
-            if ($linha->tpdov == 1) {
+        $saldo = $query[0]->Saldo;
+
+        foreach ($query as $linha) {
+            if ($linha->tpdov == 2) {
                 $saldo -= $linha->qtdeMov;
+            } else {
+                $saldo += $linha->qtdeMov;
             }
         }
-        $saldo = $saldo - $cadastro['qtde'];
+        $saldo -= $cadastro['qtde'];
         $data = [
             'produto' => $cadastro['produto'],
             'dtmov' => $cadastro['dtMov'],
