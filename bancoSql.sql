@@ -47,5 +47,8 @@ CREATE TABLE `dbadm`.`material` (`codMaterial` INT(15) NOT NULL AUTO_INCREMENT ,
 /*Criando dados de material*/
 INSERT INTO `material` (`codMaterial`, `descricao`, `codCliente`, `dataCria`, `MatMini`, `Matmax`, `status`, `usucria`) VALUES ('1', 'Camisa lisa tamanho G cinza', '789485712', '2023-05-03', '5', '9999', '', '1');
 
+/*Criando tabela de movimentação de material*/
+CREATE TABLE `dbadm`.`movloja` (`Produto` INT(255) NOT NULL , `Descricao` VARCHAR(255) NOT NULL , `dtMov` DATE NOT NULL , `func` INT(6) NOT NULL , `cliente` INT(255) NOT NULL , `dtcria` DATETIME(8) NOT NULL , `saldo` INT(255) NOT NULL , `qtdeMov` INT(255) NOT NULL , `meioVenda` TEXT NOT NULL ) ENGINE = InnoDB;
+
 /*Cadastrando venda*/
-INSERT INTO `movloja` (`Produto`, `dtmov`, `tpdov`, `func`, `cliente`, `dtcria`, `Saldo`, `qtdeMov`, `meioVenda`) VALUES ('1', '2023-03-01', '2', '1', 'Luzia Sandra Belmonte Ferreira', '2023-05-03 16:41:17.000000', '25', '1', 'P');
+INSERT INTO `movloja` (`Produto`, `dtMov`, `func`, `cliente`, `dtcria`, `saldo`, `qtdeMov`, `meioVenda`) VALUES ('1', '2023-03-01', '1', 'Luzia Sandra Belmonte', '2023-05-04 12:45:48.000000', '25', '1', 'P');
