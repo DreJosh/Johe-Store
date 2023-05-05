@@ -20,6 +20,10 @@
 
 <body class="hero-anime">
 
+    <script>
+        var base_url = '<?php echo base_url('/index.php'); ?>';
+        var dataServ = '<?= date('d/m/Y'); ?>'
+    </script>
 
     <div class="navigation-wrap bg-light start-header start-style">
         <div class="container">
@@ -27,7 +31,7 @@
                 <div class="col-12">
                     <nav class="navbar navbar-expand-md navbar-light">
 
-                        <a class="navbar-brand" href="<?php echo base_url('/index.php/home'); ?>" target="_blank"><img src="https://assets.codepen.io/1462889/fcy.png" alt=""></a>
+                        <a class="navbar-brand" href="<?php echo base_url('/index.php/home'); ?>" target="_blank"><img src="<?php echo base_url('/img/logos/JoHe_Full.png'); ?>" alt=""></a>
 
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
