@@ -30,16 +30,18 @@ CREATE TABLE `vendedores` (
   `email` varchar(255) NOT NULL,
   `dtcria` date NOT NULL,
   `status` varchar(2) NOT NULL,
+  `telefone` varchar(20) NOT NULL,
+  `cargo` varchar(100) NOT NULL,
    PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /* Criando dados do vendedor André*/
-INSERT INTO `vendedores` (`codigo`, `nome`, `email`, `dtcria`, `status`) 
-VALUES ('1', 'André Luiz Belmonte', 'andrebelmonte.234@outlook.com', '2023-05-02', '')
+INSERT INTO `vendedores` (`codigo`, `nome`, `email`, `dtcria`, `status`, `telefone`, `cargo`) 
+VALUES ('1', 'André Luiz Belmonte', 'andrebelmonte.234@outlook.com', '2023-05-02', '','1198658525','Diretor')
 
 /* Criando dados do vendedor Henrique*/
-INSERT INTO `vendedores` (`codigo`, `nome`, `email`, `dtcria`, `status`) 
-VALUES ('2', 'Henrique Martin Ferreira da Paixão', 'henriquemfpaixao@gmail.com', '2023-05-03', '')
+INSERT INTO `vendedores` (`codigo`, `nome`, `email`, `dtcria`, `status`,`telefone`, `cargo`) 
+VALUES ('2', 'Henrique Martin Ferreira da Paixão', 'henriquemfpaixao@gmail.com', '2023-05-03', '', '1185859865','Vice-diretor')
 
 /*Criando tabela de materiais*/
 CREATE TABLE `dbadm`.`material` (`codMaterial` INT(15) NOT NULL AUTO_INCREMENT , `descricao` VARCHAR(255) NOT NULL , `codCliente` INT(20) NOT NULL , `dataCria` DATE NOT NULL , `MatMini` INT(255) NOT NULL , `Matmax` INT(255) NOT NULL , `status` VARCHAR(3) NOT NULL , `usucria` INT(255) NOT NULL , PRIMARY KEY (`codMaterial`)) ENGINE = InnoDB;

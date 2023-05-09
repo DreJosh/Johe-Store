@@ -9,8 +9,6 @@ class Home extends CI_Controller
         ////////////////////////////////////////////////////////////////////////////////////////
         /////// RETORNAR TODOS OS TIPOS DE DOCUMENTOS                                    ///////
         ////////////////////////////////////////////////////////////////////////////////////////
-        // $this->load->view('Includes/v_header');
         $this->load->view('v_home');
-        // $this->load->view('Includes/v_footer');
     }
 }

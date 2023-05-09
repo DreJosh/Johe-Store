@@ -57,18 +57,19 @@
                                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="<?php echo base_url('/index.php/home'); ?>" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 mx-2">
-                                    <a class="nav-link" href="#">Cadastro</a>
+                                    <a class="nav-link">Cadastro</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Material</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('/index.php/Material'); ?>">Material</a>
                                         <a class="dropdown-item" href="<?php echo base_url('/index.php/Vendas'); ?>">Venda</a>
-                                        <a class="dropdown-item" href="#">Vendedor</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('/index.php/vendedores'); ?>">Vendedor</a>
                                     </div>
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 mx-2">
-                                    <a class="nav-link" href="#">Consultar</a>
+                                    <a class="nav-link">Consultar</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Material</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('/index.php/consulMate'); ?>">Material</a>
                                         <a class="dropdown-item" href="<?php echo base_url('/index.php/consulVendas'); ?>">Venda</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('/index.php/consulMensa'); ?>">Mensagens</a>
                                     </div>
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 mx-2">
