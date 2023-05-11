@@ -97,7 +97,7 @@
             dtMov: $('#txtDtVenda').val()
         };
         $.ajax({
-            url: base_url + "/Vendas/cadasVendas",
+            url: base_url + "/index.php//Vendas/cadasVendas",
             data: dadosajax,
             type: 'POST',
             dataType: "json",
@@ -108,7 +108,7 @@
                         timer: 3000,
                         title: "Sucesso!",
                         text: "Venda Cadastrada.",
-                        imageUrl: base_url + "/img/check.gif",
+                        imageUrl: base_url + "/assets/img/icones/check.gif",
                         showConfirmButton: false
                     });
                 } else {
@@ -116,7 +116,7 @@
                         timer: 3000,
                         title: "Erro!",
                         text: "Não foi possível realizar sua venda, verifique.",
-                        imageUrl: base_url + "/img/erro.gif",
+                        imageUrl: base_url + "/assets/img/icones/erro.gif",
                         showConfirmButton: false
                     });
                 }

@@ -36,4 +36,18 @@ class M_insert extends CI_Model
         $this->db->insert('movloja', $data);
         return ($this->db->affected_rows() != 1) ? false : true;
     }
+
+    public function cadastVendedor($input)
+    {
+        $data = [
+            'nome' => $input['vendedor'],
+            'email' => $input['email'],
+            'dtcria' => date('Y-m-d'),
+            'telefone' => $input['tel'],
+            'cargo' => $input['cargo']
+
+        ];
+        $this->db->insert('funcionarios', $data);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
 }

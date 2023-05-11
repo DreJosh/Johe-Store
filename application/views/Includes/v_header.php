@@ -35,7 +35,7 @@
 <body class="hero-anime">
 
     <script>
-        var base_url = '<?php echo base_url('/index.php'); ?>';
+        var base_url = '<?php echo base_url(); ?>';
         var dataServ = '<?= date('d/m/Y'); ?>'
     </script>
 
@@ -61,7 +61,7 @@
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="<?php echo base_url('/index.php/Material'); ?>">Material</a>
                                         <a class="dropdown-item" href="<?php echo base_url('/index.php/Vendas'); ?>">Venda</a>
-                                        <a class="dropdown-item" href="<?php echo base_url('/index.php/vendedores'); ?>">Vendedor</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('/index.php/funcionario'); ?>">Funcionário</a>
                                     </div>
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 mx-2">
@@ -70,6 +70,7 @@
                                         <a class="dropdown-item" href="<?php echo base_url('/index.php/consulMate'); ?>">Material</a>
                                         <a class="dropdown-item" href="<?php echo base_url('/index.php/consulVendas'); ?>">Venda</a>
                                         <a class="dropdown-item" href="<?php echo base_url('/index.php/consulMensa'); ?>">Mensagens</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('/index.php/consulFunc'); ?>">Funcionário</a>
                                     </div>
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 mx-2">
