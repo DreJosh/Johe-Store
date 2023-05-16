@@ -8,14 +8,10 @@ Para executar o projeto é necessário o download do sistema Xampp.
 
 Insira o projeto na pasta C:\\xampp\\htdocs.
 
-Em seguida entre no navegador e insira na URL: http://localhost/Boostrap-table-codeigniter-main/Boostrap-table-codeigniter-main/
-
-Login: admin
-
-Senha: admin
-
-Para realizar que o sistema flua de forma correta, crie o banco de dados.
+Para que o sistema flua de forma correta, crie o banco de dados.
 `create database 'dbadm';`
+
+## O sistema foi realizado inteiro com o framework Codeigniter
 
 **O que é CodeIgniter**
 
