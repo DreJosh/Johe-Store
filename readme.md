@@ -61,8 +61,3 @@ Consulte a `licença contrato <https://github.com/bcit-ci/CodeIgniter/blob/devel
 
 Relate problemas de segurança em nosso `Painel de segurança <mailto:security@codeigniter.com>`_
 ou através da nossa `página no HackerOne <https://hackerone.com/codeigniter>`_, obrigado.
-
-**Reconhecimento**
-
-A equipe do CodeIgniter gostaria de agradecer ao EllisLab, a todos os
-contribuidores do projeto CodeIgniter e você, o usuário do CodeIgniter.
