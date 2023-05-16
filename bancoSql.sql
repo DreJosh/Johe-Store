@@ -36,59 +36,18 @@ CREATE DATABASE `dbadm`;
 
 /*Criando tabela de vendedores*/
 CREATE TABLE `funcionarios` (
-  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `registro` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
+  `cargo` varchar(100) NOT NULL,
+  `centroCusto` int(11) NOT NULL,
+  `empresa` varchar(255) NOT NULL, 
   `email` varchar(255) NOT NULL,
   `dtcria` date NOT NULL,
+  `tipo` varchar(100) NOT NULL,
   `status` varchar(2) NOT NULL,
   `telefone` varchar(20) NOT NULL,
-  `cargo` varchar(100) NOT NULL,
-  PRIMARY KEY (`codigo`)
+    PRIMARY KEY (`codigo`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
-
-/* Criando dados do vendedor André*/
-INSERT INTO
-  `funcionarios` (
-    `codigo`,
-    `nome`,
-    `email`,
-    `dtcria`,
-    `status`,
-    `telefone`,
-    `cargo`
-  )
-VALUES
-  (
-    '1',
-    'André Luiz Belmonte',
-    'andrebelmonte.234@outlook.com',
-    '2023-05-02',
-    '',
-    '1198658525',
-    'Diretor'
-  );
-
-/* Criando dados do vendedor Henrique*/
-INSERT INTO
-  `funcionarios` (
-    `codigo`,
-    `nome`,
-    `email`,
-    `dtcria`,
-    `status`,
-    `telefone`,
-    `cargo`
-  )
-VALUES
-  (
-    '2',
-    'Henrique Martin Ferreira da Paixão',
-    'henriquemfpaixao@gmail.com',
-    '2023-05-03',
-    '',
-    '1185859865',
-    'Vice-diretor'
-  );
 
 /*Criando tabela de materiais*/
 CREATE TABLE `dbadm`.`material` (
@@ -102,30 +61,6 @@ CREATE TABLE `dbadm`.`material` (
   `usucria` INT(255) NOT NULL,
   PRIMARY KEY (`codMaterial`)
 ) ENGINE = InnoDB;
-
-/*Criando dados de material*/
-INSERT INTO
-  `material` (
-    `codMaterial`,
-    `descricao`,
-    `codCliente`,
-    `dataCria`,
-    `MatMini`,
-    `Matmax`,
-    `status`,
-    `usucria`
-  )
-VALUES
-  (
-    '1',
-    'Camisa lisa tamanho G cinza',
-    '789485712',
-    '2023-05-03',
-    '5',
-    '9999',
-    '',
-    '1'
-  );
 
 /*Criando tabela de movimentação de material*/
 CREATE TABLE `dbadm`.`movloja` (
@@ -159,7 +94,7 @@ VALUES
     '1',
     '2023-03-01',
     '1',
-    'Luzia Sandra Belmonte',
+    'Luiza Santos',
     '2023-05-04 12:45:48.000000',
     '25',
     '1',
@@ -181,6 +116,6 @@ CREATE TABLE `dbadm`.`fornecedores` (
   `CodDDD` INT(3) NOT NULL,
   `telefone` INT(10) NOT NULL DEFAULT '11',
   `emailEmpre` VARCHAR(100) NOT NULL,
-  `dtcria` DATETIME(12) NOT NULL,
+  `dtcria` DATETIME(6) NOT NULL,
   PRIMARY KEY (`codigo`)
 ) ENGINE = InnoDB;
