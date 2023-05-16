@@ -3,6 +3,7 @@
 Sistema criado para realizar cadastro, relatorios e consultas de uma loja de roupas.
 
 **Projeto**
+
 Para executar o projeto é necessário o download do sistema Xampp.
 
 Insira o projeto na pasta C:\\xampp\\htdocs.
